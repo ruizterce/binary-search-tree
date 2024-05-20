@@ -92,4 +92,34 @@ export default class Tree {
       return this.insert(value, node.right);
     }
   }
+
+  // Delete the given value
+  delete(value, node = this.root) {
+    if (node === null) return node;
+    if (value < node.data) {
+      node.left = this.delete(value, node.left);
+    } else if (value > node.data) {
+      node.right = this.delete(value, node.right);
+    } else {
+      // Node with 1 child or no children
+      if (node.left === null) {
+        return node.right;
+      } else if (node.right === null) {
+        return node.left;
+      }
+      // Node with 2 children - Copy and delete the successor
+      node.data = this.minValue(node.right);
+      node.right = this.delete(node.data, node.right);
+    }
+    return node;
+  }
+  // Find the successor of a node (the next smaller value)
+  minValue(node) {
+    let minV = node.data;
+    while (node.left != null) {
+      minV = node.left.data;
+      node = node.left;
+    }
+    return minV;
+  }
 }
