@@ -69,4 +69,27 @@ export default class Tree {
       this.prettyPrint(node.left, `${prefix}${isLeft ? "    " : "│   "}`, true);
     }
   }
+
+  // Insert the given value refusing duplicates
+  insert(value, node = this.root) {
+    const dupeMsg = "Oops, " + value + " is already in the tree.";
+    if (value === node.data) {
+      console.log(dupeMsg);
+      return;
+    }
+    if (value < node.data) {
+      if (node.left === null) {
+        node.left = new Node(value);
+        return;
+      }
+      return this.insert(value, node.left);
+    }
+    if (value > node.data) {
+      if (node.right === null) {
+        node.right = new Node(value);
+        return;
+      }
+      return this.insert(value, node.right);
+    }
+  }
 }

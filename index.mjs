@@ -8,3 +8,13 @@ const myTree = new Tree(array);
 // Print the tree in console
 console.log("Printing the tree:");
 myTree.prettyPrint();
+// Insert a few values
+console.log("Inserting 4, 6, 12, 54 and 333");
+myTree.insert(4);
+myTree.insert(6);
+myTree.insert(12);
+myTree.insert(54);
+myTree.insert(333);
+// Print the tree in console
+console.log("Printing the tree:");
+myTree.prettyPrint();
