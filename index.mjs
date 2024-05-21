@@ -30,4 +30,7 @@ console.log("Finding the node with value 5");
 console.log(myTree.find(5));
 // Print a breadth-first level ordered list of the Nodes
 console.log("Breadth-first level order list of Nodes:");
-myTree.levelOrderCb(console.log);
+myTree.levelOrder(console.log);
+// Print a InOrder list of the Nodes
+console.log("InOrder list of nodes");
+myTree.inOrder(console.log);

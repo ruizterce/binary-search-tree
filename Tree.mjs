@@ -137,16 +137,19 @@ export default class Tree {
     }
   }
 
-  // Return a level order (breadth-first) array of the nodes in the BST
-  levelOrder() {
+  // Run a callback function with every node as an argument in breadth-first level order. Return an ordered array of nodes if callback is not included.
+  levelOrder(callback = null) {
     let node = this.root;
     if (node === null) return [];
     let queue = [node];
-    let finalQueue = [];
+    let array = [];
     while (queue.length > 0) {
       let currentNode = queue.shift();
-      finalQueue.push(currentNode);
-
+      if (callback === null) {
+        array.push(currentNode);
+      } else {
+        callback(currentNode);
+      }
       if (currentNode.left !== null) {
         queue.push(currentNode.left);
       }
@@ -154,15 +157,26 @@ export default class Tree {
         queue.push(currentNode.right);
       }
     }
-    return finalQueue;
+    if (callback === null) {
+      return array;
+    }
+    return;
   }
 
-  // Run a callback function with every node as an argument in breadth-first level order
-  levelOrderCb(callback) {
-    const levelOrderArr = this.levelOrder();
-    if (callback === undefined) return levelOrderArr;
-    levelOrderArr.forEach((e) => {
-      callback(e);
-    });
+  // Run a callback function with every node as an argument InOrder.  Return an ordered array of nodes if callback is not included.
+  inOrder(callback = null, node = this.root, array = []) {
+    if (node === null) return;
+    if (node.left != null) {
+      this.inOrder(callback, node.left, array);
+    }
+    if (callback === null) {
+      array.push(node);
+    } else {
+      callback(node);
+    }
+    if (node.right != null) {
+      this.inOrder(callback, node.right, array);
+    }
+    return array;
   }
 }
