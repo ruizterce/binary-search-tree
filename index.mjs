@@ -25,3 +25,6 @@ myTree.delete(54);
 // Print the tree in console
 console.log("Printing the tree:");
 myTree.prettyPrint();
+// Find a node
+console.log("Finding the node with value 5");
+console.log(myTree.find(5));

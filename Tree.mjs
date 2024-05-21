@@ -113,6 +113,7 @@ export default class Tree {
     }
     return node;
   }
+
   // Find the successor of a node (the next smaller value)
   minValue(node) {
     let minV = node.data;
@@ -121,5 +122,18 @@ export default class Tree {
       node = node.left;
     }
     return minV;
+  }
+
+  // Return the node containing the given value
+  find(value, node = this.root) {
+    if (node === null || node.data === value) {
+      return node;
+    }
+
+    if (value < node.data) {
+      return this.find(value, node.left);
+    } else {
+      return this.find(value, node.right);
+    }
   }
 }
