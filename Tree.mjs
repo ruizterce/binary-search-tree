@@ -136,4 +136,33 @@ export default class Tree {
       return this.find(value, node.right);
     }
   }
+
+  // Return a level order (breadth-first) array of the nodes in the BST
+  levelOrder() {
+    let node = this.root;
+    if (node === null) return [];
+    let queue = [node];
+    let finalQueue = [];
+    while (queue.length > 0) {
+      let currentNode = queue.shift();
+      finalQueue.push(currentNode);
+
+      if (currentNode.left !== null) {
+        queue.push(currentNode.left);
+      }
+      if (currentNode.right !== null) {
+        queue.push(currentNode.right);
+      }
+    }
+    return finalQueue;
+  }
+
+  // Run a callback function with every node as an argument in breadth-first level order
+  levelOrderCb(callback) {
+    const levelOrderArr = this.levelOrder();
+    if (callback === undefined) return levelOrderArr;
+    levelOrderArr.forEach((e) => {
+      callback(e);
+    });
+  }
 }
