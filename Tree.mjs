@@ -28,7 +28,7 @@ export default class Tree {
       ) {
         arraySorted.push(rightSorted.shift());
       } else if (leftSorted[0] === rightSorted[0]) {
-        // If both compared values are equal, we only save one of them and remove the duplicate.
+        // If both compared values are equal, we only save one of them and remove the duplicate
         arraySorted.push(leftSorted.shift());
         rightSorted.shift();
       }
@@ -137,7 +137,7 @@ export default class Tree {
     }
   }
 
-  // Run a callback function with every node as an argument in breadth-first level order. Return an ordered array of nodes if callback is not included.
+  // Run a callback function with every node as an argument in breadth-first level order. Return an ordered array of nodes if callback is not included
   levelOrder(callback = null) {
     let node = this.root;
     if (node === null) return [];
@@ -163,7 +163,7 @@ export default class Tree {
     return;
   }
 
-  // Run a callback function with every node as an argument InOrder.  Return an ordered array of nodes if callback is not included.
+  // Run a callback function with every node as an argument InOrder.  Return an ordered array of nodes if callback is not included
   inOrder(callback = null, node = this.root, array = []) {
     if (node === null) return;
     if (node.left != null) {
@@ -180,7 +180,7 @@ export default class Tree {
     return array;
   }
 
-  // Run a callback function with every node as an argument preOrder.  Return an ordered array of nodes if callback is not included.
+  // Run a callback function with every node as an argument preOrder.  Return an ordered array of nodes if callback is not included
   preOrder(callback = null, node = this.root, array = []) {
     if (node === null) return;
     if (callback === null) {
@@ -197,7 +197,7 @@ export default class Tree {
     return array;
   }
 
-  // Run a callback function with every node as an argument postOrder.  Return an ordered array of nodes if callback is not included.
+  // Run a callback function with every node as an argument postOrder.  Return an ordered array of nodes if callback is not included
   postOrder(callback = null, node = this.root, array = []) {
     if (node === null) return;
     if (node.left != null) {
@@ -212,5 +212,23 @@ export default class Tree {
       callback(node);
     }
     return array;
+  }
+
+  // Return the given node's height (number of edges on the longest path to a leaf)
+  height(node, height = 0) {
+    if (node === null) return;
+    let heightLeft = height;
+    let heightRight = height;
+    if (node.left != null) {
+      heightLeft = this.height(node.left, height + 1);
+    }
+    if (node.right != null) {
+      heightRight = this.height(node.right, height + 1);
+    }
+    if (heightLeft > heightRight) {
+      return heightLeft;
+    } else {
+      return heightRight;
+    }
   }
 }

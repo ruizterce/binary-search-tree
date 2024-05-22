@@ -40,3 +40,10 @@ myTree.preOrder(console.log);
 // Print a PostOrder list of the Nodes
 console.log("PostOrder list of nodes");
 myTree.postOrder(console.log);
+// Print the height (number of edges on the longest path to a leaf) of the given nodes
+console.log("Height of node 5:");
+console.log(myTree.height(myTree.find(5)));
+console.log("Height of node 333:");
+console.log(myTree.height(myTree.find(333)));
+console.log("Height of node 8:");
+console.log(myTree.height(myTree.find(8)));
