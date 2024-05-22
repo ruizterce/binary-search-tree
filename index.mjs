@@ -82,12 +82,22 @@ myTree.prettyPrint();
 console.log("Is the tree balanced?");
 console.log(myTree.isBalanced());
 // Insert a few values
-console.log("Inserting 34, 35, 64, 3233 and 7255...");
+console.log("Inserting 34, 35, 40, 64, 3233 and 7255...");
 myTree.insert(34);
 myTree.insert(35);
 myTree.insert(64);
+myTree.insert(40);
 myTree.insert(3233);
 myTree.insert(7255);
+// Print the tree in console
+console.log("Printing the tree:");
+myTree.prettyPrint();
+// Check if the tree is balanced
+console.log("Is the tree balanced?");
+console.log(myTree.isBalanced());
+// Rebalance the tree
+console.log("Rebalancing...");
+myTree.rebalance();
 // Print the tree in console
 console.log("Printing the tree:");
 myTree.prettyPrint();

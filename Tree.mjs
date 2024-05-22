@@ -275,4 +275,14 @@ export default class Tree {
     }
     return isBalanced;
   }
+
+  // Rebalance the tree
+  rebalance() {
+    const updatedArray = [];
+    this.array = this.inOrder((node) => {
+      updatedArray.push(node.data);
+    });
+    this.array = updatedArray;
+    this.root = this.buildTree(this.array, true);
+  }
 }
