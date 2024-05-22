@@ -34,3 +34,6 @@ myTree.levelOrder(console.log);
 // Print a InOrder list of the Nodes
 console.log("InOrder list of nodes");
 myTree.inOrder(console.log);
+// Print a PreOrder list of the Nodes
+console.log("PreOrder list of nodes");
+myTree.preOrder(console.log);

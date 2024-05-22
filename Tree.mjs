@@ -179,4 +179,21 @@ export default class Tree {
     }
     return array;
   }
+
+  // Run a callback function with every node as an argument preOrder.  Return an ordered array of nodes if callback is not included.
+  preOrder(callback = null, node = this.root, array = []) {
+    if (node === null) return;
+    if (callback === null) {
+      array.push(node);
+    } else {
+      callback(node);
+    }
+    if (node.left != null) {
+      this.preOrder(callback, node.left, array);
+    }
+    if (node.right != null) {
+      this.preOrder(callback, node.right, array);
+    }
+    return array;
+  }
 }
