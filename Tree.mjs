@@ -231,4 +231,20 @@ export default class Tree {
       return heightRight;
     }
   }
+
+  // Return the given node's depth (number of edges to the root node)
+  depth(node, root = this.root, depth = 0) {
+    if (node === null) return null;
+    if (root === node) return depth;
+    if (node.data < root.data) {
+      if (root.left != null) {
+        return this.depth(node, root.left, depth + 1);
+      }
+    } else {
+      if (root.right != null) {
+        return this.depth(node, root.right, depth + 1);
+      }
+    }
+    return depth;
+  }
 }

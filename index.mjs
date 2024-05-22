@@ -31,19 +31,45 @@ console.log(myTree.find(5));
 // Print a breadth-first level ordered list of the Nodes
 console.log("Breadth-first level order list of Nodes:");
 myTree.levelOrder(console.log);
+// Print the tree in console
+console.log("Printing the tree:");
+myTree.prettyPrint();
 // Print a InOrder list of the Nodes
 console.log("InOrder list of nodes");
 myTree.inOrder(console.log);
+// Print the tree in console
+console.log("Printing the tree:");
+myTree.prettyPrint();
 // Print a PreOrder list of the Nodes
 console.log("PreOrder list of nodes");
 myTree.preOrder(console.log);
+// Print the tree in console
+console.log("Printing the tree:");
+myTree.prettyPrint();
 // Print a PostOrder list of the Nodes
 console.log("PostOrder list of nodes");
 myTree.postOrder(console.log);
+// Print the tree in console
+console.log("Printing the tree:");
+myTree.prettyPrint();
 // Print the height (number of edges on the longest path to a leaf) of the given nodes
-console.log("Height of node 5:");
-console.log(myTree.height(myTree.find(5)));
-console.log("Height of node 333:");
-console.log(myTree.height(myTree.find(333)));
 console.log("Height of node 8:");
 console.log(myTree.height(myTree.find(8)));
+console.log("Height of node 333:");
+console.log(myTree.height(myTree.find(333)));
+console.log("Height of node 5:");
+console.log(myTree.height(myTree.find(5)));
+console.log("Height of node 12:");
+console.log(myTree.height(myTree.find(12)));
+// Print the tree in console
+console.log("Printing the tree:");
+myTree.prettyPrint();
+// Print the depth (number of edges to the root node) of the given nodes
+console.log("Depth of node 8:");
+console.log(myTree.depth(myTree.find(8)));
+console.log("Depth of node 333:");
+console.log(myTree.depth(myTree.find(333)));
+console.log("Depth of node 5:");
+console.log(myTree.depth(myTree.find(5)));
+console.log("Depth of node 12:");
+console.log(myTree.depth(myTree.find(12)));
