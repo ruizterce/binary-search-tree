@@ -247,4 +247,32 @@ export default class Tree {
     }
     return depth;
   }
+
+  // Check if the tree is balanced (the difference between heights of the left subtree and the right subtree of every node is not more than 1)
+  isBalanced(node = this.root, isBalanced) {
+    if (node === null) return null;
+    let leftHeight = 0;
+    let rightHeight = 0;
+    let leftBalanced = true;
+    let rightBalanced = true;
+    if (node.left != null) {
+      leftHeight = 1 + this.height(node.left);
+      leftBalanced = this.isBalanced(node.left);
+    }
+    if (node.right != null) {
+      rightHeight = 1 + this.height(node.right);
+      rightBalanced = this.isBalanced(node.right);
+    }
+    if (
+      leftHeight >= rightHeight - 1 &&
+      leftHeight <= rightHeight + 1 &&
+      leftBalanced &&
+      rightBalanced
+    ) {
+      isBalanced = true;
+    } else {
+      isBalanced = false;
+    }
+    return isBalanced;
+  }
 }

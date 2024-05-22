@@ -9,11 +9,13 @@ const myTree = new Tree(array);
 console.log("Printing the tree:");
 myTree.prettyPrint();
 // Insert a few values
-console.log("Inserting 4, 6, 12, 54 and 333...");
+console.log("Inserting 4, 6, 9, 12, 54, 102 and 333...");
 myTree.insert(4);
 myTree.insert(6);
+myTree.insert(9);
 myTree.insert(12);
 myTree.insert(54);
+myTree.insert(102);
 myTree.insert(333);
 // Print the tree in console
 console.log("Printing the tree:");
@@ -73,3 +75,22 @@ console.log("Depth of node 5:");
 console.log(myTree.depth(myTree.find(5)));
 console.log("Depth of node 12:");
 console.log(myTree.depth(myTree.find(12)));
+// Print the tree in console
+console.log("Printing the tree:");
+myTree.prettyPrint();
+// Check if the tree is balanced
+console.log("Is the tree balanced?");
+console.log(myTree.isBalanced());
+// Insert a few values
+console.log("Inserting 34, 35, 64, 3233 and 7255...");
+myTree.insert(34);
+myTree.insert(35);
+myTree.insert(64);
+myTree.insert(3233);
+myTree.insert(7255);
+// Print the tree in console
+console.log("Printing the tree:");
+myTree.prettyPrint();
+// Check if the tree is balanced
+console.log("Is the tree balanced?");
+console.log(myTree.isBalanced());
