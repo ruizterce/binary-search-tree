@@ -37,3 +37,6 @@ myTree.inOrder(console.log);
 // Print a PreOrder list of the Nodes
 console.log("PreOrder list of nodes");
 myTree.preOrder(console.log);
+// Print a PostOrder list of the Nodes
+console.log("PostOrder list of nodes");
+myTree.postOrder(console.log);
