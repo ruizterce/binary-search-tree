@@ -2,7 +2,7 @@ import Tree from "./Tree.mjs";
 
 const array = [1, 8, 3, 23, 7, 8, 3, 2, 5, 7, 10, 54, 4321, 526];
 
-// Build the tree from an array
+// Build the tree from the array
 console.log("Building Balanced Binary Search Tree...");
 const myTree = new Tree(array);
 // Print the tree in console
@@ -57,8 +57,8 @@ myTree.prettyPrint();
 // Print the height (number of edges on the longest path to a leaf) of the given nodes
 console.log("Height of node 8:");
 console.log(myTree.height(myTree.find(8)));
-console.log("Height of node 333:");
-console.log(myTree.height(myTree.find(333)));
+console.log("Height of node 102:");
+console.log(myTree.height(myTree.find(102)));
 console.log("Height of node 5:");
 console.log(myTree.height(myTree.find(5)));
 console.log("Height of node 12:");
@@ -69,8 +69,8 @@ myTree.prettyPrint();
 // Print the depth (number of edges to the root node) of the given nodes
 console.log("Depth of node 8:");
 console.log(myTree.depth(myTree.find(8)));
-console.log("Depth of node 333:");
-console.log(myTree.depth(myTree.find(333)));
+console.log("Depth of node 102:");
+console.log(myTree.depth(myTree.find(102)));
 console.log("Depth of node 5:");
 console.log(myTree.depth(myTree.find(5)));
 console.log("Depth of node 12:");
